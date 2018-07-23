@@ -12,6 +12,11 @@
   height: 150px;
   padding: 20px;
   color: white;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
 }
 
 .App-title {
@@ -34,7 +39,8 @@
 .tweet-list {
   width: 80%;
   margin: auto;
-  margin-top: 40px;
+  margin-top: 200px;
+  padding: 0;
 }
 
 .tweet-card {
