@@ -9,9 +9,17 @@ export default class TweetList extends Component {
   render() {
     if (this.props.tweets) {
       const tweetItems = JSON.parse(this.props.tweets)["statuses"].map(
-        tweet => <TweetItem key={tweet.id_str} text={tweet.text} />
+        tweet => (
+          <TweetItem
+            key={tweet.id_str}
+            tweet={tweet}
+            text={tweet.text}
+            user={tweet.user}
+          />
+        )
       );
-      return <ul>{tweetItems}</ul>;
+      console.log(JSON.parse(this.props.tweets)["statuses"][0]);
+      return <ul className="tweet-list">{tweetItems}</ul>;
     } else {
       return null;
     }
