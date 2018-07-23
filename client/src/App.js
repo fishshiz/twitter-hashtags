@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import TweetList from "./tweetlist.jsx";
 
 class App extends Component {
   state = {
@@ -22,14 +23,13 @@ class App extends Component {
     return body;
   };
   render() {
-    console.log(process.env.NODE_ENV);
+    console.log(typeof this.state.response);
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to {process.env.NODE_ENV}</h1>
+          <h1 className="App-title">HashTag Search</h1>
         </header>
-        <p className="App-intro">{this.state.response}</p>
+        <TweetList tweets={this.state.response} />
       </div>
     );
   }
