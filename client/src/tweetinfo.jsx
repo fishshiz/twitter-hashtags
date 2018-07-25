@@ -5,13 +5,17 @@ export default class TweetInfo extends Component {
     return (
       <div className="tweet-info">
         <div className="tweet-metrics">
-          <p>
+          <p className="metric-container">
             <i className="fas fa-heart fa-2x" />{" "}
-            {this.props.tweet.favorite_count}
+            <span className="metric-count">
+              {this.props.tweet.favorite_count}
+            </span>
           </p>
-          <p>
-            <i className="fas fa-retweet fa-2x" />{" "}
-            {this.props.tweet.retweet_count}
+          <p className="metric-container">
+            <i className="fas fa-retweet fa-2x" />
+            <span className="metric-count">
+              {this.props.tweet.retweet_count}
+            </span>
           </p>
         </div>
         <p className="timestamp">{this.props.tweet.created_at}</p>
