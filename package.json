@@ -9,7 +9,7 @@
     "build": "concurrently \"npm run client-build\" \"babel . --ignore node_modules,build --out-dir build\"",
     "clean": "concurrently \"rimraf node_modules\" \"cd client && rimraf node_modules build\" \"rimraf node_modules build\"",
     "heroku-postbuild": "npm build",
-    "install": "(cd client && npm install) && (npm install)",
+    "install": "(cd client && npm install)",
     "start": "concurrently \"cd client && PORT=3000 npm start\" \"nodemon -r babel-register server.js\"",
     "start:prod": "node build/server.js"
   },
