@@ -10,14 +10,16 @@ class App extends Component {
       response: "",
       sortBy: "favorites"
     };
-    this.childHandler = this.childHandler.bind(this);
+    this.recieveSearchData = this.recieveSearchData.bind(this);
     this.sortBy = this.sortBy.bind(this);
   }
 
-  childHandler(childData) {
-    this.setState({ response: childData.tweets });
+  // I send a callback to the search component, this allows the child component to bubble up the results to the App component, so it can share that information to the Tweet Listings component
+  recieveSearchData(searchData) {
+    this.setState({ response: searchData.tweets });
   }
 
+  // I used another callback to share sorting information from the search comonent to the tweet list via the App component
   sortBy(childData) {
     this.setState({ sortBy: childData });
   }
@@ -36,6 +38,7 @@ class App extends Component {
 
     return body;
   };
+
   render() {
     return (
       <div className="App">
@@ -43,7 +46,10 @@ class App extends Component {
           <h1 className="App-title">
             <span className="hashtag">#</span>HashTag Lookup
           </h1>
-          <SearchComponent action={this.childHandler} sortBy={this.sortBy} />
+          <SearchComponent
+            action={this.recieveSearchData}
+            sortBy={this.sortBy}
+          />
         </header>
         <TweetList tweets={this.state.response} sortBy={this.state.sortBy} />
       </div>

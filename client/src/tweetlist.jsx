@@ -19,6 +19,7 @@ export default class TweetList extends Component {
   }
 
   sort(tweets, sort = this.props.sortBy) {
+    // Depending on the props sent down by the parent App component, we can sort tweets by favorites or retweets.
     let sortedArr;
     if (sort === "favorites") {
       sortedArr = tweets.sort(function(a, b) {
