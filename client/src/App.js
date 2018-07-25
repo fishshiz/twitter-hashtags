@@ -44,7 +44,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">
-            <span className="hashtag">#</span>HashTag Lookup
+            <span className="hashtag">#</span>TwitterTag Lookup
           </h1>
           <SearchComponent
             action={this.recieveSearchData}

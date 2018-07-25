@@ -2,25 +2,21 @@
   "name": "twitter",
   "version": "1.0.0",
   "scripts": {
-    "client": "cd client && npm start",
-    "client-build": "cd client && react-scripts build",
-    "server": "nodemon server.js",
-    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
-    "build": "concurrently \"npm run client-build\" \"babel . --ignore node_modules,build --out-dir build\"",
-    "clean": "concurrently \"rimraf node_modules\" \"cd client && rimraf node_modules build\" \"rimraf node_modules build\"",
-    "heroku-postbuild": "npm build",
-    "install": "(cd client && npm install)",
-    "start": "concurrently \"cd client && PORT=3000 npm start\" \"nodemon -r babel-register server.js\"",
-    "start:prod": "node build/server.js"
+    "build": "concurrently \"cd client && npm build\" \"cd server && npm build\"",
+    "clean": "concurrently \"rimraf node_modules\" \"cd client && rimraf node_modules build\" \"cd server && rimraf node_modules build\"",
+    "heroku-postbuild": "yarn build",
+    "install": "(cd client && npm install) && (cd server && npm install)",
+    "start": "concurrently \"cd client && PORT=3000 npm start\" \"cd server && PORT=3001 npm start\"",
+    "start:prod": "cd server && npm start:prod"
   },
   "dependencies": {
     "dotenv": "4.0.0",
     "express": "^4.16.2",
     "twitter-node-client": "0.0.6",
-    "rimraf": "^2.5.4"
+    "rimraf": "^2.5.4",
+    "concurrently": "^3.5.0"
   },
   "devDependencies": {
-    "concurrently": "^3.5.0",
     "babel-register": "^6.22.0",
     "nodemon": "^1.18.3"
   },

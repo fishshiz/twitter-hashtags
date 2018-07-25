@@ -10,10 +10,11 @@ const config = {
   accessToken: process.env.ACCESS_TOKEN,
   accessTokenSecret: process.env.ACCESS_SECRET
 };
+console.log("config", config);
 var twitter = new Twitter(config);
 
 var error = function(err, response, body) {
-  console.log("ERROR [%s]", err);
+  console.log("ERROR [%s]", Object.values(err));
 };
 
 exports.searchTweets = async (req, res) => {
