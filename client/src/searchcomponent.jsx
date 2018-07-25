@@ -27,7 +27,6 @@ export default class SearchComponent extends Component {
 
   fetchResponse() {
     let query = this.state.query.split(/[#, ]+/).join(" ");
-    console.log(query);
     return fetch(`/api/search?query=${query}&count=${this.state.number}`)
       .then(res => res.json())
       .then(function(json) {
