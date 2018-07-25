@@ -13,18 +13,20 @@ const config = {
 var twitter = new Twitter(config);
 
 exports.searchTweets = async (req, res) => {
-  let q = req.query.query.split(" ").filter(word => word.length > 0);
-  q = q
-    .map(el => {
-      return "#".concat(el);
-    })
-    .join("");
+  if (req.query.query) {
+    let q = req.query.query.split(" ").filter(word => word.length > 0);
+    q = q
+      .map(el => {
+        return "#".concat(el);
+      })
+      .join("");
 
-  const tweets = await twitter.getSearch(
-    { q: q, count: req.query.count },
-    error,
-    function(tweets) {
-      res.json({ tweets });
-    }
-  );
+    const tweets = await twitter.getSearch(
+      { q: q, count: req.query.count },
+      error,
+      function(tweets) {
+        res.json({ tweets });
+      }
+    );
+  }
 };
