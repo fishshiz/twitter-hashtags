@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 const router = express.Router();
 
-const staticFiles = express.static(path.join(__dirname, "../../client/build"));
+const staticFiles = express.static(path.join(__dirname, "/../client/build"));
 app.use(staticFiles);
 
 router.get("/api/search", searchController.searchTweets);
