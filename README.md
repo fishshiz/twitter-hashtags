@@ -4,7 +4,7 @@
 
 This application allows a user to search for tweets containing different hashtags on Twitter. It uses the Twitter API and the TwitterJSClient to make server side requests from a Node.js backend, and then push them to a client-side react app. A user simply enters a search query, chooses a number of tweets to display, and then chooses to sort results by either favorites or retweets counts.
 
-![Demo](https://media.giphy.com/media/1ylQmn9khwHle6swCe/giphy.gif)
+![Demo](https://media.giphy.com/media/fs0ckDRfSKyLMqTMPH/giphy.gif)
 
 ### Features
 
@@ -12,4 +12,4 @@ The Search Component sanitizes a query upon entry, so a user can search by eithe
 
 ### Future Features
 
-In the future, I plan to add logic to make hashtags displayed in returned tweets clickable, so the user can run a new search by clicking a hashtag in a returned tweet.
+In the future, I am interested in looking into adding logic to make hashtags displayed in returned tweets clickable, so the user can run a new search by clicking a hashtag in a returned tweet.
