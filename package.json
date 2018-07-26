@@ -7,7 +7,7 @@
     "heroku-postbuild": "npm build",
     "install": "(cd client && npm install) && (cd server && npm install)",
     "start": "concurrently \"cd client && PORT=3000 npm start\" \"cd server && PORT=3001 npm start\"",
-    "start:prod": "cd server && npm start:prod"
+    "start:prod": "cd server && npm run start:prod"
   },
   "dependencies": {
     "dotenv": "4.0.0",
