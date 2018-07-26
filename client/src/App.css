@@ -423,9 +423,6 @@ a {
 }
 
 @media only screen and (min-width: 730px) {
-  a {
-    color: #fd8a5e;
-  }
   .tweet-text-container {
     font-size: 20px;
     width: 85%;
@@ -453,9 +450,6 @@ a {
   }
 }
 @media only screen and (min-width: 800px) {
-  a {
-    color: #222;
-  }
   .tweet-text-container {
     font-size: 24px;
     width: 90%;
