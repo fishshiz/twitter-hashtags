@@ -10,7 +10,6 @@ const config = {
   accessToken: process.env.ACCESS_TOKEN,
   accessTokenSecret: process.env.ACCESS_SECRET
 };
-console.log("config", config);
 var twitter = new Twitter(config);
 
 var error = function(err, response, body) {
