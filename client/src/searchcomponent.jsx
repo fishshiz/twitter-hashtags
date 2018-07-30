@@ -51,7 +51,7 @@ export default class SearchComponent extends Component {
     return (
       <form className="search-component" onSubmit={this.handleSubmit}>
         <label
-          className="field a-field a-field_a1 page__field"
+          className="field a-field"
           value={this.state.query}
           onChange={this.handleChange("query")}
         >
@@ -60,7 +60,7 @@ export default class SearchComponent extends Component {
             <span className="field__label">Search for:</span>
           </span>
         </label>
-        <label className="field a-field a-field_a2 page__field">
+        <label className="field a-field">
           <input
             className="field__input"
             placeholder="min: 1, max: 100"
@@ -75,7 +75,7 @@ export default class SearchComponent extends Component {
             <span className="field__label">Limit search to:</span>
           </span>
         </label>
-        <label className="field a-field page__field">
+        <label className="field a-field">
           <select
             className="field__input"
             value={this.state.sort}
